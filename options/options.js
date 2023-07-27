@@ -1,10 +1,11 @@
 export const globalOptions = {
-  name: "robestertest-dev-104641",
-  url: "https://robestertest-dev-104641.botics.co",
-  api: "https://robestertest-dev-104641.botics.co/api/v1",
-  screenOptions: {
-    headerShown: false
-  }
+  "name": "robestertest-dev-104641",
+  "url": "https://robestertest-dev-104641.botics.co",
+  "api": "https://robestertest-dev-104641.botics.co/api/v1",
+  "screenOptions": {
+    "headerShown": false
+  },
+  "initialRoute": "Untitled2"
 };
 export const modulesOptions = {
   "@modules/app-menu": {

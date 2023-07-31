@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Text, StyleSheet, View, TextInput, FlatList, Image, Pressable } from "react-native";
 
-const ChatListingScreen = params => {
+const ChatListingScreen = () => {
   const [username, setUsername] = useState("");
   const [messages, setMessages] = useState([]);
   useEffect(() => {
@@ -143,8 +143,8 @@ const ChatListingItem = ({
       <Image source={message.profileImage} style={chatListingItemStyles.profileImage} />
       {message.isOnline && <Image source={require("./assets/onlineIcon.png")} style={chatListingItemStyles.activityDot} /> || null}
       <View style={chatListingItemStyles.chatListingItemInfo}>
-        <Text style={chatListingItemStyles.username}>{message.name}</Text>
-        <Text style={chatListingItemStyles.message}>{message.message}</Text>
+        <Text style={chatListingItemStyles.username}></Text>
+        <Text style={chatListingItemStyles.message}></Text>
       </View>
       <View style={chatListingItemStyles.chatListingItemTime}>
         <Text style={chatListingItemStyles.time}>{message.lastTime}</Text>

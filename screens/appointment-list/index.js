@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Text, StyleSheet, View, SafeAreaView, Image, FlatList } from "react-native";
 
-const AppointmentListScreen = params => {
+const AppointmentListScreen = () => {
   const [appointments, setAppointments] = useState([]);
   useEffect(() => {
     setAppointments([{
@@ -88,54 +88,6 @@ const styles = StyleSheet.create({
 });
 export default AppointmentListScreen;
 
-const Appointment = ({
-  item
-}) => {
-  return <View style={appointmentStyles.appointmentContainer}>
-      <View style={appointmentStyles.imgContainer}>
-        <Image source={item.image} style={appointmentStyles.img} />
-      </View>
-      <View style={appointmentStyles.desContainer}>
-        <Text>{item.name}</Text>
-        <View style={appointmentStyles.timings}>
-          <Text style={appointmentStyles.timingText}>{item.date}</Text>
-          <Text style={appointmentStyles.timingText}>,</Text>
-          <Text style={appointmentStyles.timingText}>{item.time}</Text>
-        </View>
-      </View>
-    </View>;
+const Appointment = ({}) => {
+  return;
 };
-
-const appointmentStyles = StyleSheet.create({
-  appointmentContainer: {
-    backgroundColor: "#fff",
-    width: "100%",
-    height: 100,
-    borderRadius: 8,
-    marginBottom: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: 10
-  },
-  imgContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    borderRadius: 8,
-    backgroundColor: "#ddd",
-    height: 80,
-    width: 80
-  },
-  desContainer: {
-    width: "70%",
-    justifyContent: "space-between",
-    height: "60%",
-    alignItems: "flex-start"
-  },
-  timings: {
-    flexDirection: "row"
-  },
-  timingText: {
-    color: "grey"
-  }
-});

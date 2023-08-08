@@ -12,7 +12,7 @@ const AccountScreen = () => {
   const userInfo = useSelector(state => state?.ecommerce?.user);
 
   const handleGetUser = async () => {
-    await dispatch(getUserInfo()).then(res => {}).catch(err => console.log(err));
+    await dispatch(getUserInfo()).then(() => {}).catch(err => console.log(err));
   };
 
   useEffect(() => {
@@ -22,11 +22,7 @@ const AccountScreen = () => {
   }, []);
   return <View style={styles.container}>
             <ScrollView>
-                <View style={styles.profileContainer}>
-                    <Image source={require("./assets/profilePicture.png")} style={styles.profilePicture} />
-                    <Text style={styles.profileName}>{userInfo?.username}</Text>
-                    <Text style={styles.profilemail}>{userInfo?.email}</Text>
-                </View>
+                
 
                 <View style={[styles.accountHeadings]}>
                     <Text style={styles.inputText1}>Edit Account</Text>
@@ -51,16 +47,7 @@ const AccountScreen = () => {
                 </View>
                 <Text style={styles.connectAcc}>Connected accounts</Text>
                 <View style={styles.subHeader}>
-                    <View style={styles.mainContainer}>
-                        <Image // @ts-ignore
-          source={require("./assets/btnSigninwithApple.png")} style={styles.dot} />
-                        <View>
-                            <View style={styles.orderStatusContainer}>
-                                <Text style={styles.statusHeading}>Apple</Text>
-                                <Text style={[styles.statusHeading, styles.statusTime]}>Connected</Text>
-                            </View>
-                        </View>
-                    </View>
+                    
                     <View style={styles.mainContainer}>
                         <Image // @ts-ignore
           source={require("./assets/btnSigninwithGoogle.png")} style={styles.dot} />
@@ -93,24 +80,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff"
   },
-  profileContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    paddingTop: 15
-  },
-  profilePicture: {
-    width: 82,
-    height: 82,
-    borderRadius: 40
-  },
-  profileName: {
-    fontSize: 20,
-    marginTop: 10
-  },
-  profilemail: {
-    fontSize: 14,
-    color: "grey"
-  },
   inputs: {
     marginTop: 20,
     paddingHorizontal: 20
@@ -134,25 +103,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 50,
     backgroundColor: "#f9f9f9"
-  },
-  lockIcon: {
-    position: "absolute",
-    right: 20,
-    top: 40,
-    width: 20,
-    height: 20,
-    resizeMode: "contain"
-  },
-  bottomTextContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
-    marginHorizontal: 20,
-    marginTop: 40
-  },
-  bottomText: {
-    fontSize: 12,
-    textAlign: "center",
-    marginHorizontal: 20
   },
   accountHeadings: {
     justifyContent: "space-between",
@@ -210,11 +160,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     width: "50%",
     color: "#222222"
-  },
-  statusText: {
-    paddingHorizontal: 10,
-    fontSize: 10,
-    color: "#2A2B2E"
   },
   statusTime: {
     textAlign: 'right',
